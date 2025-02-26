@@ -1,6 +1,6 @@
 [package]
 name = "gan"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["muyuanjin <muyuanjin@gmail.com>"]
 include = ["Cargo.toml", "README.md", "LICENSE", "src/**/*.rs"]
 description = "Just do it! A small tool provides ergonomic value handling with ignore/ ok/ some semantics."
