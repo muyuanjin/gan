@@ -110,6 +110,7 @@ impl<T: Sized> Gan for T {}
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::io::Write;
 
     #[test]
     fn test_basic_operations() {
@@ -138,13 +139,16 @@ mod tests {
     }
 
     #[test]
-    fn result_usage() -> Result<(), String> {
+    fn result_usage()-> Result<(), String>  {
         // Result 使用测试
-        match "42".parse::<i32>() {
-            Ok(_) => write!(std::io::stdout(), "Parsed successfully").ignore().ok(),
-            // Ok(_) => write!(std::io::stdout(), "Parsed successfully").ok(),//应该无法通过编译
-            Err(_) => Err("Failed to parse".to_string()),
+        fn get_result() -> Result<(), String> {
+            match "42".parse::<i32>() {
+                Ok(_) => write!(std::io::stdout(), "Parsed successfully\n").ignore().ok(),
+                // Ok(_) => write!(std::io::stdout(), "Parsed successfully\n").ok(),//应该无法通过编译
+                Err(_) => Err("Failed to parse".to_string()),
+            }
         }
+        get_result()
     }
 
     #[test]
