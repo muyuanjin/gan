@@ -1,11 +1,28 @@
 /*!
 # Gan - 干就完了！
 
-`干！` 核心原则是帮开发者更果决地处理返回值。提供了忽略结果/快速构造默认值的快捷方式。
+`干！` 核心原则是帮开发者更果决地处理返回值。提供了忽略结果/快速构造默认值的快捷方式。  
 "Just do it!" philosophy. Provides ergonomic value handling with ignore/ok/some semantics.
-*/
+## Quick Start
 
-#![doc(html_root_url = "https://docs.rs/gan/0.1.0")]
+Add to your `Cargo.toml` :
+```toml
+[dependencies]
+gan = "0.1"
+```
+
+## Usage Examples
+
+| Operation                | Expression Example     | Return Type     | Example Use Case                         |
+|--------------------------|------------------------|-----------------|------------------------------------------|
+| **Ignore Result**        | `expr.ignore()`        | `()`            | `format!("{}", 42).ignore();`            |
+| **Construct Ok Unit**    | `expr.ok()`            | `Result<(), E>` | `write!(file, "{}", data)?.ok()`         |
+| **Construct Ok Unit**    | `result.ignore().ok()` | `Result<(), E>` | `write!(file, "{}", data).ignore().ok()` |
+| **Construct Ok Wrapped** | `expr.okay()`          | `Result<T, E>`  | `42.okay()`                              |
+| **Construct Some Value** | `expr.some()`          | `Option<T>`     | `42.some()`                              |
+| **Construct None Value** | `expr.none()`          | `Option<U>`     | `42.none()`                             |
+*/
+#![doc(html_root_url = "https://docs.rs/gan/latest")]
 
 /// 核心拓展方法集  
 /// Core extension trait

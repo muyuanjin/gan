@@ -2,12 +2,12 @@
 name = "gan"
 version = "0.1.1"
 authors = ["muyuanjin <muyuanjin@gmail.com>"]
-include = ["Cargo.toml", "README.md", "LICENSE.txt", "src/**/*.rs"]
+include = ["Cargo.toml", "README.md", "LICENSE", "src/**/*.rs"]
 description = "Just do it! A small tool provides ergonomic value handling with ignore/ ok/ some semantics."
 homepage = "https://github.com/muyuanjin/gan"
 documentation = "https://docs.rs/gan"
 readme = "README.md"
-keywords = ["gan", "ignore", "ok", "some","tool"]
+keywords = ["gan", "ignore", "ok", "some", "tool"]
 categories = ["no-std", "rust-patterns"]
 license = "MIT"
 repository = "https://github.com/muyuanjin/gan"

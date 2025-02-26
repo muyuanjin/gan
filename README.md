@@ -11,21 +11,30 @@ A pragmatic Rust library that helps developers handle return values decisively. 
 在 `Cargo.toml` 添加（Add to your Cargo.toml）：
 ```toml
 [dependencies]
-gan = "0.1.0"
+gan = "0.1"
 ```
 
 ## 用法示例 Usage Examples
 
 
-| 操作          | 表达式示例                  | 返回类型            | 示例用途                                     |
-|-------------|------------------------|-----------------|------------------------------------------|
-| **忽略结果**    | `expr.ignore()`        | `()`            | `format!("{}", 42).ignore();`            |
-| **构造Ok单元**  | `expr.ok()`            | `Result<(), E>` | `write!(file, "{}", data)?.ok()`         |
-| **构造Ok单元**  | `result.ignore().ok()` | `Result<(), E>` | `write!(file, "{}", data).ignore().ok()` |
-| **构造Ok包裹**  | `expr.okay()`          | `Result<T, E>`  | `42.okay()`                              |
-| **构造Some值** | `expr.some()`          | `Option<T>`     | `42.some()`                              |
-| **构造None值** | `expr.none()`          | `Option<U>`     | ` 42.none()`                             |
+| 操作            | 表达式示例                  | 返回类型            | 示例用途                                     |
+|---------------|------------------------|-----------------|------------------------------------------|
+| **忽略结果**      | `expr.ignore()`        | `()`            | `format!("{}", 42).ignore();`            |
+| **构造 Ok 单元**  | `expr.ok()`            | `Result<(), E>` | `write!(file, "{}", data)?.ok()`         |
+| **构造 Ok 单元**  | `result.ignore().ok()` | `Result<(), E>` | `write!(file, "{}", data).ignore().ok()` |
+| **构造 Ok 包裹**  | `expr.okay()`          | `Result<T, E>`  | `42.okay()`                              |
+| **构造 Some 值** | `expr.some()`          | `Option<T>`     | `42.some()`                              |
+| **构造 None 值** | `expr.none()`          | `Option<U>`     | ` 42.none()`                             |
 
+
+| Operation                | Expression Example     | Return Type     | Example Use Case                         |
+|--------------------------|------------------------|-----------------|------------------------------------------|
+| **Ignore Result**        | `expr.ignore()`        | `()`            | `format!("{}", 42).ignore();`            |
+| **Construct Ok Unit**    | `expr.ok()`            | `Result<(), E>` | `write!(file, "{}", data)?.ok()`         |
+| **Construct Ok Unit**    | `result.ignore().ok()` | `Result<(), E>` | `write!(file, "{}", data).ignore().ok()` |
+| **Construct Ok Wrapped** | `expr.okay()`          | `Result<T, E>`  | `42.okay()`                              |
+| **Construct Some Value** | `expr.some()`          | `Option<T>`     | `42.some()`                              |
+| **Construct None Value** | `expr.none()`          | `Option<U>`     | ` 42.none()`                             |
 
 ## 开源协议 License
 
